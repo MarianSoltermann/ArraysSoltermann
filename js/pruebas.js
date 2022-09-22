@@ -1,6 +1,6 @@
 
 //pregunta de edad
-/*let edad = parseInt(prompt("Ingrese su edad"));
+let edad = parseInt(prompt("Ingrese su edad"));
 if(edad < 18){
   alert("Sos menor de edad. Prohibida la venta");
 }else{
@@ -71,4 +71,3 @@ function mostrarTotal() {
 ingresarPrecio();
 calcularTotal();
 mostrarTotal();
-*/
