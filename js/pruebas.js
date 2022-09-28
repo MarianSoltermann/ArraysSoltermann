@@ -71,3 +71,31 @@ function mostrarTotal() {
 ingresarPrecio();
 calcularTotal();
 mostrarTotal();
+
+
+//DOM
+
+const catalogo = document.getElementById(`catalogo`)
+let producto = [
+  {
+    articulo: "Gin Bombay",
+    precio: 2500,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_819486-MLA50158962519_062022-F.webp",
+  },
+
+  {
+    articulo: "Gin Tanqueray",
+    precio: 2800,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_950817-MLA51307565889_082022-F.webp",
+  }
+]
+
+producto.forEach(producto => {
+  let productoAgregado = document.createElement ("catalogo")
+  productoAgregado.innerHTML = `
+  <img class="img" src="${producto.imagen}"></img>
+  <h3>${producto.articulo}</h3>
+  <span>$${producto.precio}</span>
+  `
+  catalogo.append(productoAgregado)
+ })
