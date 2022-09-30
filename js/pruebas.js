@@ -1,4 +1,3 @@
-
 //pregunta de edad
 let edad = parseInt(prompt("Ingrese su edad"));
 if(edad < 18){
@@ -6,26 +5,6 @@ if(edad < 18){
 }else{
   alert("Puedes beber alcohol con moderación");
 }
-
-
-//stock de productos
-const productos = [
-    { id: 1, articulo: "Gin", marca: "Bombay", precio: 2500 },
-    { id: 2, articulo: "Gin", marca: "Tanqueray", precio: 3000 },
-    { id: 3, articulo: "Vino", marca: "Trumpeter", precio: 1200 },
-    { id: 4, articulo: "Vino", marca: "Santa Julia", precio: 800 },
-    { id: 5, articulo: "Fernet", marca: "Branca", precio: 2000 },
-    { id: 6, articulo: "Vodka", marca: "Absolut", precio: 1800 },
-    { id: 7, articulo: "Whisky", marca: "Jim Beam", precio: 35000 },
-    { id: 8, articulo: "Cerveza", marca: "Stella", precio: 400 },
-    { id: 9, articulo: "Cerveza", marca: "Patagonia", precio: 500 },
-];
-
-//control de stock
-for (let stock = 0; stock < productos.length; stock++) {
-    const inventario = productos[stock];
-    console.log(stock, inventario);
-   }
 
 //registro de clientes
 function Cliente(nombre, telefono, direccion){
@@ -72,30 +51,67 @@ ingresarPrecio();
 calcularTotal();
 mostrarTotal();
 
+//control de stock
+for (let stock = 0; stock < producto.length; stock++) {
+  const inventario = producto[stock];
+  console.log(stock, inventario);
+}
 
 //DOM
-
 const catalogo = document.getElementById(`catalogo`)
 let producto = [
   {
+    codigo: 1,
     articulo: "Gin Bombay",
     precio: 2500,
     imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_819486-MLA50158962519_062022-F.webp",
   },
-
   {
+    codigo: 2,
     articulo: "Gin Tanqueray",
     precio: 2800,
     imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_950817-MLA51307565889_082022-F.webp",
+  },
+  {
+    codigo: 3,
+    articulo: "Gin Beefeater",
+    precio: 2900,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_713622-MLA48700300946_122021-F.webp",
+  },
+  {
+    codigo: 4,
+    articulo: "Gin Beefeater",
+    precio: 2900,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_841870-MLA50125632108_052022-O.webp",
+  },
+  {
+    codigo: 5,
+    articulo: "Cerveza Patagonia",
+    precio: 2900,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_821118-MLA50761563499_072022-F.webp",
   }
 ]
 
 producto.forEach(producto => {
   let productoAgregado = document.createElement ("catalogo")
   productoAgregado.innerHTML = `
-  <img class="img" src="${producto.imagen}"></img>
-  <h3>${producto.articulo}</h3>
-  <span>$${producto.precio}</span>
-  `
-  catalogo.append(productoAgregado)
- })
+  <div class="card" style="width: 18rem;">
+    <img class="img" src="${producto.imagen}" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${producto.articulo}</h5>
+        <p class="card-text">$${producto.precio}</p>
+        <a href="#" class="btn btn-dark" id=${producto.codigo}>Comprar</a>
+      </div>
+  </div>
+`
+catalogo.append(productoAgregado)
+
+//evento
+const boton = document.getElementById(producto.codigo)
+boton.addEventListener("click", () => comprar(producto))
+  
+})
+
+const comprar = (producto) => {
+  console.log(producto.codigo);
+}

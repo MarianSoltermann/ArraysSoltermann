@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drinks Store</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <a><img class= "logo" src="img/logo.png"></a>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img class="logo" src="img/logo.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="nav collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">PRODUCTOS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CUENTA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CARRITO</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
-    <h1>Delivery de bebidas</h1>
+<section>
     <nav>
     <ul>
         <li>
@@ -28,66 +49,11 @@
         </li>
     </ul>
     </nav>
-<main>
-    <div id = "catalogo"></div>
-
-
-
-</main>
-<section >
-        <figure>
-            <img src="img/bombay.webp">
-            <figcaption>Gin Bombay $2500</figcaption>
-        </figure>
-        <figure>
-            <img src="img/tanqueray.webp">
-            <figcaption>Gin Tanqueray $2500</figcaption>
-        </figure>
-        <figure>
-            <img src="img/beefeater.webp">
-            <figcaption>Cerveza patagonia $2500</figcaption>
-        </figure>
-        <figure>
-            <img src="img/fernet.webp">
-            <figcaption>Fernet Branca $2500</figcaption>
-        </figure>
-    </section>
-        <section>
-        <figure>
-            <img src="img/patagonia.webp">
-            <figcaption>Cerveza patagonia $2500</figcaption>
-        </figure>
-            <figure>
-            <img src="img/trumpeter.webp">
-            <figcaption>Vino Trumpeter $2500</figcaption>
-        </figure>
-        <figure>
-            <img src="img/julia.webp">
-            <figcaption>Vino Santa Julia $2500</figcaption>
-        </figure>
-        <figure>
-            <img src="img/vodka.webp">
-            <figcaption>Vodka Abbsollut $2500</figcaption>
-        </figure>
-        </section>
-        <section>
-        <figure>
-            <img src="img/corona.webp">
-            <figcaption>Cerveza Corona</figcaption>
-        </figure>
-        <figure>
-            <img src="img/patagonia.webp">
-            <figcaption>Cerveza patagonia $2500</figcaption>
-        </figure>
-        <figure>
-                <img src="img/campari.webp">
-                <figcaption>Cerveza patagonia $2500</figcaption>
-        </figure>
-            <figure>
-            <img src="img/whisky.webp">
-            <figcaption>Whisky Jim Bean $2500</figcaption>
-        </figure>
-        </section>
+</section> 
+</main>   
+<div id = "catalogo"></div>
    <script src="./js/pruebas.js"></script> 
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>   
 </body>
 </html>
