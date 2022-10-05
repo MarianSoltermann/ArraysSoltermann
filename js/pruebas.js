@@ -51,12 +51,6 @@ ingresarPrecio();
 calcularTotal();
 mostrarTotal();
 
-//control de stock
-for (let stock = 0; stock < producto.length; stock++) {
-  const inventario = producto[stock];
-  console.log(stock, inventario);
-}
-
 //DOM
 const catalogo = document.getElementById(`catalogo`)
 let producto = [
@@ -106,6 +100,12 @@ producto.forEach(producto => {
 `
 catalogo.append(productoAgregado)
 
+//control de stock
+for (let stock = 0; stock < catalogo.length; stock++) {
+  const inventario = catalogo[stock];
+  console.log(stock, inventario);
+}
+
 //evento
 const boton = document.getElementById(producto.codigo)
 boton.addEventListener("click", () => comprar(producto))
@@ -115,3 +115,29 @@ boton.addEventListener("click", () => comprar(producto))
 const comprar = (producto) => {
   console.log(producto.codigo);
 }
+
+//storage
+localStorage.setItem("cliente1", "Mariana Perez");
+sessionStorage.setItem("clave", "569752");
+
+localStorage.setItem("cliente2", "Juan Gomez");
+sessionStorage.setItem("contraseña", "645885");
+
+let mensaje = localStorage.getItem("cliente1");
+console.log(mensaje)
+
+localStorage.clear();
+
+//JSON
+const carrito = [
+  {codigo: 1, articulo: "Gin Bombay", precio: 2500},
+  {codigo: 5, articulo: "Cerveza Patagonia", precio: 2900},
+];
+
+const guardarStorage = (clave, valor) => {localStorage.setItem(clave, valor)};
+
+carrito.forEach(carrito => {
+  guardarStorage(carrito.articulo, JSON.stringify(carrito));
+})
+
+localStorage.setItem("carrito", JSON.stringify(carrito));
