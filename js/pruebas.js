@@ -1,13 +1,6 @@
-//pregunta de edad
-let edad = parseInt(prompt("Ingrese su edad"));
-if(edad < 18){
-  alert("Sos menor de edad. Prohibida la venta");
-}else{
-  alert("Puedes beber alcohol con moderación");
-}
 
 //registro de clientes
-function Cliente(nombre, telefono, direccion){
+/*function Cliente(nombre, telefono, direccion){
     this.nombre = nombre;
     this.telefono = telefono;
     this.direccion = direccion;
@@ -50,6 +43,7 @@ function mostrarTotal() {
 ingresarPrecio();
 calcularTotal();
 mostrarTotal();
+*/
 
 //DOM
 const catalogo = document.getElementById(`catalogo`)
@@ -129,11 +123,7 @@ console.log(mensaje)
 localStorage.clear();
 
 //JSON
-const carrito = [
-  {codigo: 1, articulo: "Gin Bombay", precio: 2500},
-  {codigo: 5, articulo: "Cerveza Patagonia", precio: 2900},
-];
-
+/*
 const guardarStorage = (clave, valor) => {localStorage.setItem(clave, valor)};
 
 carrito.forEach(carrito => {
@@ -141,3 +131,16 @@ carrito.forEach(carrito => {
 })
 
 localStorage.setItem("carrito", JSON.stringify(carrito));
+*/
+
+//operadores avanzados
+let edad = parseInt(prompt("Ingrese su edad"));
+edad >= 18 ? alert("Puedes comprar") : alert("No puedes comprar");
+
+const carrito = [1,2,3,4];
+
+if(carrito.length === 0){
+console.log("El carrito está vacío");
+}
+
+carrito.length === 0 && console.log("El carrito esta vacio")
