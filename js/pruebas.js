@@ -148,6 +148,7 @@ btn.addEventListener("click", () => {
   Toastify({
     text: "Chateá con nosotros",
     className: "info",
+    destination: "https://whatsapp.com/",
     style: {
       background: "linear-gradient(to right, #00b09b, #96c93d)",
     }
