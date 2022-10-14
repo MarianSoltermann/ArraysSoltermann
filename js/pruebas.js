@@ -99,11 +99,9 @@ for (let stock = 0; stock < catalogo.length; stock++) {
   const inventario = catalogo[stock];
   console.log(stock, inventario);
 }
-
 //evento
 const boton = document.getElementById(producto.codigo)
 boton.addEventListener("click", () => comprar(producto))
-  
 })
 
 const comprar = (producto) => {
@@ -143,4 +141,15 @@ if(carrito.length === 0){
 console.log("El carrito está vacío");
 }
 
-carrito.length === 0 && console.log("El carrito esta vacio")
+//Toastify
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", () => {
+  Toastify({
+    text: "Chateá con nosotros",
+    className: "info",
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    }
+  }).showToast();
+});
