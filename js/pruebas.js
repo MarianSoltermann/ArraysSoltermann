@@ -1,6 +1,6 @@
 
 //registro de clientes
-/*function Cliente(nombre, telefono, direccion){
+function Cliente(nombre, telefono, direccion){
     this.nombre = nombre;
     this.telefono = telefono;
     this.direccion = direccion;
@@ -12,6 +12,7 @@ const cliente2 = new Cliente("Juan", 343562547, "Ramirez 5466");
 console.log(cliente2.direccion);
 
 //calcular carrito
+/*
 let totalPedido = 0;
 let precioUnitario = 0;
 let contador = 0;
@@ -80,6 +81,9 @@ let producto = [
   }
 ]
 
+//renderizado
+let carrito = []
+
 producto.forEach(producto => {
   let productoAgregado = document.createElement ("catalogo")
   productoAgregado.innerHTML = `
@@ -94,19 +98,43 @@ producto.forEach(producto => {
 `
 catalogo.append(productoAgregado)
 
+const boton = document.getElementById(producto.codigo)
+boton.addEventListener("click", () => comprarProducto(producto))
+})
+
+const comprarProducto = (producto) => {
+  let productoExiste = carrito.find(item => item.codigo === producto.codigo)
+  if(productoExiste === undefined){
+    carrito.push({
+      codigo: producto.codigo,
+      articulo: producto.articulo,
+      precio: producto.precio,
+      imagen: producto.imagen,
+      cantidad: 1
+    })
+  }else{
+    productoExiste.precio = productoExiste + producto.precio
+    productoExiste.cantidad = productoExiste.cantidad + 1 
+  }
+}
+
+boton.addEventListener("click", () => console.log(carrito))
+
+
+
 //control de stock
 for (let stock = 0; stock < catalogo.length; stock++) {
   const inventario = catalogo[stock];
   console.log(stock, inventario);
 }
 //evento
-const boton = document.getElementById(producto.codigo)
+/*const boton = document.getElementById(producto.codigo)
 boton.addEventListener("click", () => comprar(producto))
-})
 
 const comprar = (producto) => {
   console.log(producto.codigo);
 }
+*/
 
 //storage
 localStorage.setItem("cliente1", "Mariana Perez");
@@ -135,12 +163,6 @@ localStorage.setItem("carrito", JSON.stringify(carrito));
 let edad = parseInt(prompt("Ingrese su edad"));
 edad >= 18 ? alert("Puedes comprar") : alert("No puedes comprar");
 
-const carrito = [1,2,3,4];
-
-if(carrito.length === 0){
-console.log("El carrito está vacío");
-}
-
 //Toastify
 let btn = document.getElementById("btn");
 
@@ -155,28 +177,16 @@ btn.addEventListener("click", () => {
   }).showToast();
 });
 
-//Fetch
+//buscador
+const inputAfter = document.getElementById("inputAfter")
+const botonInput = document.getElementById("botonInput")
 
-const insertarInfo = async () => {
-  const listado = document.getElementById("listado");
+const buscarProducto = (string) => {
+  console.log(string)
+  let productoBuscado = productos.find(producto => producto.articulo.includes(string))
+  console.log(productoBuscado);
+ inputAfter.value = ``
+}
 
-  try {
-    //codigo peligroso
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await response.json();
-
-    data.forEach((publicacion) => {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <h2>${publicacion.title}</h2>
-        <p>${publicacion.body}</p>
-      `;
-
-      listado.append(li);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-insertarInfo();
+inputAfter.addEventListener("input", () => console.log(inputAfter.value))
+botonInput.addEventListener("click", () => console.log(inputAfter.value))
