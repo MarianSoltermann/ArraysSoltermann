@@ -52,10 +52,14 @@ main{
 	justify-content: space-around;
 }
 
+*{margin: 0;
+	padding: 0;}
+
 .card {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
+	justify-content: space-evenly;
 }
 .img {
 	width: 40%;
@@ -64,12 +68,46 @@ main{
 #catalogo {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
 }
 
-.boton {
-	background-color: black;
+#carrito {
+		margin-bottom: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+}
+.carro {
+	cursor: pointer;
+	width: 40%;
+}
+
+.chat {
+	cursor: pointer;
+	width: 40%;
 }
 
 
+.lupa {
+	cursor: pointer;
+	width: 20%;
+}
+
+h3 {
+	font-family: "Roboto", sans-serif;
+	font-size: 5px;
+}
+
+#formulario{
+	padding-top: 10px;
+	margin: 20px;
+}
+
+#span {
+	background-color: lightgrey;
+	text-align: center;
+}

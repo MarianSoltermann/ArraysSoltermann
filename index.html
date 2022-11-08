@@ -52,15 +52,52 @@
     </ul>
     </nav>
 </section> 
-</main>
+<main>
 <div id="catalogo"></div>
 <ul id="listado"></ul>
+</main>
+<article class= "container-fluid">
+  <div class= "row">
+  <article class="col-sm-12 col-md-6">
+    <form class="row g-3" id="formulario">
+      <h3>Registrate y obtené el 10% off!</h3>
+        <div class="col-md-6">
+        <label for="inputEmail4" class="form-label texto">Email</label>
+        <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+        <label for="inputPassword4" class="form-label texto">Contraseña</label>
+        <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+        <label for="inputAddress" class="form-label texto">Dirección</label>
+        <input type="text" class="form-control" id="inputAddress">
+        </div>
+        <div class="col-12">
+        <label for="inputAddress2" class="form-label texto">Teléfono</label>
+        <input type="text" class="form-control" id="inputAddress2">
+        </div>
+        <div class="col-3">
+        <button type="button" class="btn btn-dark">Confirmar</button>
+        </div>
+    </form>
+  </article>
+  <article id="carrito" class="col-md-6">
+    <h3>Mirá tu carrito</h3>
+    <div>
+    <a id="boton"><img class="carro" src="img/carrito.png"></a>
+    </div>
 <div>
 <input type="text" id="inputAfter">
-<button id="botonInput">Buscar</button>
+<a id="botonInput"><img class="lupa" src="img/lupa.png"></a>
 </div>
-<button id="btn" type="button" class="btn btn-secondary">Info</button>
-<button id="boton" type="button" class="btn btn-secondary">Mostrar Carrito</button>
+<a id="btn"><img class="chat" src="img/chat.png"></a>
+</article>
+</div>
+<div>
+	<span class="d-block p-0" id="span"><p>DISEÑADO POR MARIANA SOLTERMANN</p></span>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
    <script src="./js/pruebas.js"></script>

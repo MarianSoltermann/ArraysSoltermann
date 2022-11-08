@@ -69,7 +69,7 @@ let producto = [
   },
   {
     codigo: 4,
-    articulo: "Gin Beefeater",
+    articulo: "Fernet Branca",
     precio: 2900,
     imagen: "https://http2.mlstatic.com/D_NQ_NP_841870-MLA50125632108_052022-O.webp",
   },
@@ -78,6 +78,24 @@ let producto = [
     articulo: "Cerveza Patagonia",
     precio: 2900,
     imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_821118-MLA50761563499_072022-F.webp",
+  },
+  {
+    codigo: 6,
+    articulo: "Cerveza Corona",
+    precio: 6900,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_888526-MLA45874053111_052021-F.webp",
+  },
+  {
+    codigo: 7,
+    articulo: "Whisky Jameson",
+    precio: 4900,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_965596-MLA49676435048_042022-F.webp",
+  },
+  {
+    codigo: 8,
+    articulo: "Whisky Jhonny Walker",
+    precio: 6900,
+    imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_712317-MLA31602611097_072019-F.webp",
   }
 ]
 
