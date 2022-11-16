@@ -11,43 +11,10 @@ const cliente2 = new Cliente("Juan", 343562547, "Ramirez 5466");
 
 console.log(cliente2.direccion);
 
-//calcular carrito
-/*
-let totalPedido = 0;
-let precioUnitario = 0;
-let contador = 0;
-
-alert(`Vamos a sumar los precios de los productos que agregaste al carrito y te mostraremos el total`);
-
-function ingresarPrecio() {
-  precioUnitario = Number(prompt(`Ingrese el precio del producto` + (contador + 1) + `:`));
-
-while (precioUnitario > 0) {
-  totalPedido = calcularTotal(precioUnitario);
-  contador++;
-  precioUnitario = Number(prompt(`Ingrese el precio del producto` + (contador + 1) + `:`));
-}
-if (precioUnitario <= 0 || isNaN(precioUnitario)) {
-  console.log(`Ha introducido un número no válido`);
-}
-}
-
-function calcularTotal(precioUnitario) {
-  return totalPedido + precioUnitario;
-}
-
-function mostrarTotal() {
-  console.log(`Cantidad de productos: ` + contador);
-  console.log(`El precio total es $ ` + totalPedido);
-}
-
-ingresarPrecio();
-calcularTotal();
-mostrarTotal();
-*/
-
 //DOM
-const catalogo = document.getElementById(`catalogo`)
+
+const catalogo = document.getElementById("catalogo")
+
 let producto = [
   {
     codigo: 1,
@@ -96,11 +63,13 @@ let producto = [
     articulo: "Whisky Jhonny Walker",
     precio: 6900,
     imagen: "https://http2.mlstatic.com/D_NQ_NP_2X_712317-MLA31602611097_072019-F.webp",
-  }
-]
+  },
+];
+
+
 
 //renderizado
-let carrito = []
+let carrito =[]
 
 producto.forEach(producto => {
   let productoAgregado = document.createElement ("catalogo")
@@ -138,24 +107,28 @@ const comprarProducto = (producto) => {
 
 boton.addEventListener("click", () => console.log(carrito))
 
+//buscador
+const inputAfter = document.getElementById("inputAfter")
+const botonInput = document.getElementById("botonInput")
 
+const buscarProducto = (string) => {
+  console.log(string)
+  let productoBuscado = producto.find(producto => producto.articulo.includes(string))
+  console.log(productoBuscado);
+ inputAfter.value = ``
+}
+
+inputAfter.addEventListener("input", () => console.log(inputAfter.value))
+botonInput.addEventListener("click", () => console.log(inputAfter.value))
 
 //control de stock
 for (let stock = 0; stock < catalogo.length; stock++) {
   const inventario = catalogo[stock];
   console.log(stock, inventario);
 }
-//evento
-/*const boton = document.getElementById(producto.codigo)
-boton.addEventListener("click", () => comprar(producto))
-
-const comprar = (producto) => {
-  console.log(producto.codigo);
-}
-*/
 
 //storage
-localStorage.setItem("cliente1", "Mariana Perez");
+/*localStorage.setItem("cliente1", "Mariana Perez");
 sessionStorage.setItem("clave", "569752");
 
 localStorage.setItem("cliente2", "Juan Gomez");
@@ -164,22 +137,20 @@ sessionStorage.setItem("contraseña", "645885");
 let mensaje = localStorage.getItem("cliente1");
 console.log(mensaje)
 
-localStorage.clear();
+localStorage.clear();*/
 
 //JSON
-/*
 const guardarStorage = (clave, valor) => {localStorage.setItem(clave, valor)};
 
-carrito.forEach(carrito => {
+producto.forEach(carrito => {
   guardarStorage(carrito.articulo, JSON.stringify(carrito));
 })
 
 localStorage.setItem("carrito", JSON.stringify(carrito));
-*/
 
 //operadores avanzados
-let edad = parseInt(prompt("Ingrese su edad"));
-edad >= 18 ? alert("Puedes comprar") : alert("No puedes comprar");
+/*let edad = parseInt(prompt("Ingrese su edad"));
+edad >= 18 ? alert("Puedes comprar") : alert("No puedes comprar");*/
 
 //Toastify
 let btn = document.getElementById("btn");
@@ -195,16 +166,30 @@ btn.addEventListener("click", () => {
   }).showToast();
 });
 
-//buscador
-const inputAfter = document.getElementById("inputAfter")
-const botonInput = document.getElementById("botonInput")
+//sweetAlert
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
 
-const buscarProducto = (string) => {
-  console.log(string)
-  let productoBuscado = productos.find(producto => producto.articulo.includes(string))
-  console.log(productoBuscado);
- inputAfter.value = ``
-}
-
-inputAfter.addEventListener("input", () => console.log(inputAfter.value))
-botonInput.addEventListener("click", () => console.log(inputAfter.value))
+Swal.fire({
+  title: 'Eres mayor de edad?',
+  text: "Prohibida la venta a menores de 18 años!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#faf21e',
+  cancelButtonColor: '#171814',
+  confirmButtonText: 'Si, soy mayor!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: 'Genial!',
+      text: 'Puedes comprar',
+      icon: 'success',
+      confirmButtonColor: '#008000'
+    })
+  }
+})
